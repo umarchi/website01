@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>資産形成型 不動産投資LP | AssetBase</title>
+  <title>AssetBase</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
@@ -41,8 +41,13 @@
     <!-- 立地最優先 -->
     <article class="feature-row">
       <div class="media from-left" data-animate="left" aria-hidden="true">
-        <img src="https://picsum.photos/seed/location/1200/800" alt="立地評価のイメージ"/>
-      </div>
+    <img
+    src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1200&q=80"
+    alt="ロンドンの風景"
+    loading="lazy"
+  />
+</div>
+
       <div class="content from-right" data-animate="right">
         <h3>立地最優先</h3>
         <p>駅距離・沿線力・将来供給・賃貸需要指数を多角的にスコア化。<br class="pc-only">地図ベースのヒートマップで<strong>賃貸需要が厚いポイント</strong>に絞り込みます。</p>
@@ -65,16 +70,139 @@
           <li>5年/10年売却時の想定残債・手残り</li>
         </ul>
       </div>
-      <div class="media from-right" data-animate="right" aria-hidden="true">
-        <img src="https://picsum.photos/seed/sim/1200/800" alt="収益シミュレーションレーションのイメージ"/>
-      </div>
+<div class="media from-right" data-animate="right" aria-hidden="true">
+  <!-- 収益シミュレーション：35年（年次）／棒=右肩下がりだが凸凹／折れ線=右肩上がりだが小さな波／マーカー無し -->
+  <svg viewBox="0 0 1200 600" role="img" aria-label="収益シミュレーション：35年の棒・折れ線グラフ（リスク表現の増減あり）">
+    <style>
+      .c-axis { fill:#6b7280; font:14px Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+      .c-small{ fill:#9aa3ae; font:12px Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+      .c-grid { stroke:#e5e7eb; stroke-width:1; }
+      .c-grid-strong { stroke:#d1d5db; stroke-width:1.5; }
+      .c-bar  { fill:#bfe3a3; }                  /* 淡いグリーン（棒） */
+      .c-line-shadow { stroke:#bfe0f4; stroke-width:6; fill:none; opacity:.75; }
+      .c-line { stroke:#5fa7d6; stroke-width:4; fill:none; } /* 穏やかな青（線） */
+      .c-frame{ stroke:#94a3b8; stroke-width:1.5; fill:none; }
+    </style>
+
+    <!-- 背景グリッド（横） -->
+    <g>
+      <line x1="90" x2="1090" y1="520" y2="520" class="c-grid-strong"/>
+      <line x1="90" x2="1090" y1="440" y2="440" class="c-grid"/>
+      <line x1="90" x2="1090" y1="360" y2="360" class="c-grid-strong"/>
+      <line x1="90" x2="1090" y1="280" y2="280" class="c-grid"/>
+      <line x1="90" x2="1090" y1="200" y2="200" class="c-grid-strong"/>
+      <line x1="90" x2="1090" y1="120" y2="120" class="c-grid"/>
+    </g>
+
+    <!-- フレーム -->
+    <rect x="90" y="40" width="1000" height="480" class="c-frame"/>
+
+    <!-- 左Y軸（億） -->
+    <g class="c-axis" text-anchor="end">
+      <text x="80" y="525">0</text>
+      <text x="80" y="445">0.5億</text>
+      <text x="80" y="365">1.0億</text>
+      <text x="80" y="285">1.5億</text>
+      <text x="80" y="205">2.0億</text>
+      <text x="80" y="125">2.5億</text>
+    </g>
+
+    <!-- 右Y軸（万） -->
+    <g class="c-axis" text-anchor="start">
+      <text x="1100" y="525">0</text>
+      <text x="1100" y="445">600万</text>
+      <text x="1100" y="365">1,200万</text>
+      <text x="1100" y="285">1,800万</text>
+      <text x="1100" y="205">2,400万</text>
+      <text x="1100" y="125">3,000万</text>
+    </g>
+
+    <!-- X軸：年ラベル（5年おき） -->
+    <g class="c-small" text-anchor="middle">
+      <text x="109"  y="560">1年目</text>
+      <text x="221"  y="560">5年目</text>
+      <text x="361"  y="560">10年目</text>
+      <text x="501"  y="560">15年目</text>
+      <text x="641"  y="560">20年目</text>
+      <text x="781"  y="560">25年目</text>
+      <text x="921"  y="560">30年目</text>
+      <text x="1061" y="560">35年目</text>
+    </g>
+
+    <!-- 棒グラフ：右肩下がり＋ランダム風の小刻み増減（2.2億→0.6億） -->
+    <!-- プロット範囲：x=90..1090, y=40..520（高さ400）／バー幅=18, ステップ=28 -->
+    <g>
+      <!-- y・height を少しずつ揺らして「減少トレンドだが凸凹」を表現 -->
+      <rect class="c-bar" x="100" y="168" width="18" height="352" rx="4"/>
+      <rect class="c-bar" x="128" y="176" width="18" height="344" rx="4"/>
+      <rect class="c-bar" x="156" y="186" width="18" height="334" rx="4"/>
+      <rect class="c-bar" x="184" y="192" width="18" height="328" rx="4"/>
+      <rect class="c-bar" x="212" y="182" width="18" height="338" rx="4"/><!-- 少し戻す -->
+      <rect class="c-bar" x="240" y="198" width="18" height="322" rx="4"/>
+      <rect class="c-bar" x="268" y="206" width="18" height="314" rx="4"/>
+      <rect class="c-bar" x="296" y="216" width="18" height="304" rx="4"/>
+      <rect class="c-bar" x="324" y="210" width="18" height="310" rx="4"/><!-- 少し戻す -->
+      <rect class="c-bar" x="352" y="228" width="18" height="292" rx="4"/>
+      <rect class="c-bar" x="380" y="236" width="18" height="284" rx="4"/>
+      <rect class="c-bar" x="408" y="246" width="18" height="274" rx="4"/>
+      <rect class="c-bar" x="436" y="241" width="18" height="279" rx="4"/><!-- 少し戻す -->
+      <rect class="c-bar" x="464" y="258" width="18" height="262" rx="4"/>
+      <rect class="c-bar" x="492" y="268" width="18" height="252" rx="4"/>
+      <rect class="c-bar" x="520" y="276" width="18" height="244" rx="4"/>
+      <rect class="c-bar" x="548" y="270" width="18" height="250" rx="4"/><!-- 少し戻す -->
+      <rect class="c-bar" x="576" y="288" width="18" height="232" rx="4"/>
+      <rect class="c-bar" x="604" y="298" width="18" height="222" rx="4"/>
+      <rect class="c-bar" x="632" y="306" width="18" height="214" rx="4"/>
+      <rect class="c-bar" x="660" y="300" width="18" height="220" rx="4"/><!-- 少し戻す -->
+      <rect class="c-bar" x="688" y="318" width="18" height="202" rx="4"/>
+      <rect class="c-bar" x="716" y="326" width="18" height="194" rx="4"/>
+      <rect class="c-bar" x="744" y="336" width="18" height="184" rx="4"/>
+      <rect class="c-bar" x="772" y="330" width="18" height="190" rx="4"/><!-- 少し戻す -->
+      <rect class="c-bar" x="800" y="348" width="18" height="172" rx="4"/>
+      <rect class="c-bar" x="828" y="356" width="18" height="164" rx="4"/>
+      <rect class="c-bar" x="856" y="366" width="18" height="154" rx="4"/>
+      <rect class="c-bar" x="884" y="360" width="18" height="160" rx="4"/><!-- 少し戻す -->
+      <rect class="c-bar" x="912" y="378" width="18" height="142" rx="4"/>
+      <rect class="c-bar" x="940" y="386" width="18" height="134" rx="4"/>
+      <rect class="c-bar" x="968" y="394" width="18" height="126" rx="4"/>
+      <rect class="c-bar" x="996" y="390" width="18" height="130" rx="4"/><!-- 少し戻す -->
+      <rect class="c-bar" x="1024" y="404" width="18" height="116" rx="4"/>
+      <rect class="c-bar" x="1052" y="412" width="18" height="108" rx="4"/>
+    </g>
+
+    <!-- 折れ線：緩やかな右肩上がり＋小さな波（600万→3,000万へ） -->
+    <!-- 35点（バー中央x：109,137,...,1061）を使用。y値を少し上下させて“リスク感”を演出 -->
+    <polyline class="c-line-shadow"
+      points="
+        109,448 137,442 165,446 193,436 221,432 249,426 277,430 305,420 333,416
+        361,410 389,414 417,404 445,398 473,392 501,396 529,386 557,380
+        585,374 613,378 641,368 669,362 697,356 725,360 753,350 781,344
+        809,338 837,342 865,332 893,326 921,320 949,324 977,314 1005,308 1033,300 1061,294
+      "/>
+    <polyline class="c-line"
+      points="
+        109,444 137,438 165,442 193,432 221,428 249,422 277,426 305,416 333,412
+        361,406 389,410 417,400 445,394 473,388 501,392 529,382 557,376
+        585,370 613,374 641,364 669,358 697,352 725,356 753,346 781,340
+        809,334 837,338 865,328 893,322 921,316 949,320 977,310 1005,304 1033,296 1061,290
+      "/>
+  </svg>
+</div>
+
+
     </article>
 
     <!-- ワンストップ -->
     <article class="feature-row">
-      <div class="media from-left" data-animate="left" aria-hidden="true">
-        <img src="https://picsum.photos/seed/onestop/1200/800" alt="ワンストップ支援のイメージ"/>
-      </div>
+<div class="media from-left" data-animate="left" aria-hidden="true">
+  <img
+    src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?crop=entropy&cs=tinysrgb&fit=crop&w=1200&q=80"
+    alt="店舗で1対1で面談している様子（椅子に座る二人の女性）"
+    loading="lazy"
+  />
+</div>
+
+
       <div class="content from-right" data-animate="right">
         <h3>ワンストップ</h3>
         <p>選定・融資・契約・入居付け・運用・売却まで、<strong>専任コンサルタントが伴走</strong>。<br class="sp-only">初めてでも迷いません。</p>
