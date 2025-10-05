@@ -1,62 +1,176 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>資産形成型 不動産投資LP | Sample</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>資産形成型 不動産投資LP | AssetBase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="nav">
-<div class="logo">AssetBase</div>
-<a class="cta" href="#lead">無料で資料請求</a>
-</header>
 
+  <!-- ナビ -->
+  <header class="nav">
+    <div class="logo">AssetBase</div>
+    <a class="cta" href="#lead">無料で資料請求</a>
+  </header>
 
-<section class="hero">
-<h1>プロが厳選する<span>都心中古</span>で、<br>ムリのない資産形成を</h1>
-<p class="sub">データ×プロの目でリスクを最小化。管理まで一気通貫。</p>
-<a class="btn" href="#lead">3分で完了：無料診断</a>
-<div class="trust">掲載実績：OOテレビ / OO新聞</div>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>プロが厳選する<span>都心中古</span>で、<br class="pc-only">ムリのない資産形成を</h1>
+    <p class="sub">データ×プロの目でリスクを最小化。管理まで一気通貫。</p>
+    <a class="btn" href="#lead">3分で完了：無料診断</a>
+    <div class="trust">掲載実績：経済誌 / OO新聞 / OO経済</div>
+  </section>
+
+  <!-- Pain Points -->
+  <section class="pain">
+    <div class="container">
+      <h2>不動産投資、<br class="sp-only">こんな不安ありませんか？</h2>
+      <ul>
+        <li>どのエリア・物件を選べばよいか分からない</li>
+        <li>ローン・空室・修繕…実収益が結局いくらか不透明</li>
+        <li>購入後の入居付けや管理まで手が回らない</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Feature Rows（左右から入るアニメーション） -->
+  <section class="feature-rows" aria-label="主な特長">
+    <!-- 立地最優先 -->
+    <article class="feature-row">
+      <div class="media from-left" data-animate="left" aria-hidden="true">
+        <img src="https://picsum.photos/seed/location/1200/800" alt="立地評価のイメージ"/>
+      </div>
+      <div class="content from-right" data-animate="right">
+        <h3>立地最優先</h3>
+        <p>駅距離・沿線力・将来供給・賃貸需要指数を多角的にスコア化。<br class="pc-only">地図ベースのヒートマップで<strong>賃貸需要が厚いポイント</strong>に絞り込みます。</p>
+        <ul class="bullets">
+          <li>駅徒歩・乗降客数・商業集積を統合スコア</li>
+          <li>築年×間取り×家賃帯の需給バランス</li>
+          <li>将来の大規模開発や再開発計画も反映</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 収益シミュレーションレーション -->
+    <article class="feature-row alt">
+      <div class="content from-left" data-animate="left">
+        <h3>収益シミュレーション</h3>
+        <p>金利・空室・修繕・PM費・固定資産税まで織り込み、<strong>キャッシュフローと出口</strong>を可視化。<br class="pc-only">悲観・中立・楽観の3シナリオ比較に対応。</p>
+        <ul class="bullets">
+          <li>月次CF・年次IRR・自己資金回収期間</li>
+          <li>金利上昇や賃料下落の感度分析</li>
+          <li>5年/10年売却時の想定残債・手残り</li>
+        </ul>
+      </div>
+      <div class="media from-right" data-animate="right" aria-hidden="true">
+        <img src="https://picsum.photos/seed/sim/1200/800" alt="収益シミュレーションレーションのイメージ"/>
+      </div>
+    </article>
+
+    <!-- ワンストップ -->
+    <article class="feature-row">
+      <div class="media from-left" data-animate="left" aria-hidden="true">
+        <img src="https://picsum.photos/seed/onestop/1200/800" alt="ワンストップ支援のイメージ"/>
+      </div>
+      <div class="content from-right" data-animate="right">
+        <h3>ワンストップ</h3>
+        <p>選定・融資・契約・入居付け・運用・売却まで、<strong>専任コンサルタントが伴走</strong>。<br class="sp-only">初めてでも迷いません。</p>
+        <ol class="steps">
+          <li>無料ヒアリング</li>
+          <li>物件提案＆収支シミュレーション</li>
+          <li>契約・運用開始（賃貸管理まで）</li>
+        </ol>
+      </div>
+    </article>
+  </section>
+
+  <!-- 実績 -->
+  <section class="stats">
+    <div class="container">
+      <div class="stat"><strong>2,300+</strong><span>提案実績</span></div>
+      <div class="stat"><strong>98%</strong><span>継続運用率</span></div>
+      <div class="stat"><strong>4.9/5</strong><span>満足度</span></div>
+    </div>
+  </section>
+
+<!-- お客様の声（20件・自動横スクロール） -->
+<section class="testimonials">
+  <div class="container">
+    <h2>お客様の声</h2>
+
+    <div class="t-carousel" id="tCarousel" aria-label="お客様の声スライダー">
+        <div class="t-track">
+            <article class="t-card"><p class="t-quote">金利上昇も想定した計画で、初年度から黒字で運用できています。</p><cite class="t-author">— 30代 会社員</cite></article>
+            <article class="t-card"><p class="t-quote">出口戦略まで明快。3年後の乗り換えも見据えて安心でした。</p><cite class="t-author">— 40代 自営業</cite></article>
+            <article class="t-card"><p class="t-quote">融資から管理までワンストップ対応で助かりました。</p><cite class="t-author">— 20代 会社員</cite></article>
+            <article class="t-card"><p class="t-quote">将来の賃貸需要をデータで示してもらえたのが決め手でした。</p><cite class="t-author">— 30代 公務員</cite></article>
+            <article class="t-card"><p class="t-quote">税金面まで含めた収支説明が非常にわかりやすかった。</p><cite class="t-author">— 50代 医師</cite></article>
+            <article class="t-card"><p class="t-quote">他社と違い、無理な営業がなく信頼できました。</p><cite class="t-author">— 40代 会社員</cite></article>
+            <article class="t-card"><p class="t-quote">購入後も定期的にフォローがあり、安心して運用できています。</p><cite class="t-author">— 30代 主婦</cite></article>
+            <article class="t-card"><p class="t-quote">専門的な立地分析が非常に説得力がありました。</p><cite class="t-author">— 20代 銀行員</cite></article>
+            <article class="t-card"><p class="t-quote">想定利回り通りに推移し、信頼度が高いです。</p><cite class="t-author">— 30代 エンジニア</cite></article>
+            <article class="t-card"><p class="t-quote">空室対策までアドバイスしてもらい助かりました。</p><cite class="t-author">— 40代 会社経営</cite></article>
+            <article class="t-card"><p class="t-quote">初めての不動産投資でしたが、丁寧なサポートでした。</p><cite class="t-author">— 20代 会社員</cite></article>
+            <article class="t-card"><p class="t-quote">将来の年金代わりとして安心できるプランを提案してもらいました。</p><cite class="t-author">— 50代 会社員</cite></article>
+            <article class="t-card"><p class="t-quote">契約から管理までスムーズでストレスがありませんでした。</p><cite class="t-author">— 30代 フリーランス</cite></article>
+            <article class="t-card"><p class="t-quote">融資面でのアドバイスが的確で、希望条件を満たせました。</p><cite class="t-author">— 40代 会社員</cite></article>
+            <article class="t-card"><p class="t-quote">担当者のレスポンスが早く、安心して任せられました。</p><cite class="t-author">— 30代 会社員</cite></article>
+            <article class="t-card"><p class="t-quote">不動産投資に対する不安をしっかり解消してもらえました。</p><cite class="t-author">— 20代 公務員</cite></article>
+            <article class="t-card"><p class="t-quote">データ分析に基づいた提案で納得感がありました。</p><cite class="t-author">— 30代 研究職</cite></article>
+            <article class="t-card"><p class="t-quote">オンライン面談だけでスムーズに完結できたのが良かったです。</p><cite class="t-author">— 40代 IT企業勤務</cite></article>
+            <article class="t-card"><p class="t-quote">家族に勧められるレベルで信頼できる対応でした。</p><cite class="t-author">— 50代 自営業</cite></article>
+            <article class="t-card"><p class="t-quote">売却までサポートしてもらい、期待以上の結果でした。</p><cite class="t-author">— 30代 会社員</cite></article>
+        </div>
+    </div>
+  </div>
 </section>
 
 
-<section class="features">
-<div class="card"><h3>立地最優先</h3><p>駅徒歩・賃貸需要・将来供給を多角的に評価。</p></div>
-<div class="card"><h3>収益シミュレーション</h3><p>金利・空室・修繕を織り込んだ実収益を提示。</p></div>
-<div class="card"><h3>ワンストップ</h3><p>選定・融資・管理・売却までプロが伴走。</p></div>
-</section>
 
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2>よくある質問</h2>
+      <details>
+        <summary>自己資金はいくらから可能？</summary>
+        <p>与信や物件条件により異なりますが、少額からのスタート事例も多数あります。</p>
+      </details>
+      <details>
+        <summary>空室や修繕のリスクは？</summary>
+        <p>エリア選定とシミュレーションレーションで事前に織り込み、運用で定点観測します。</p>
+      </details>
+      <details>
+        <summary>途中売却はできますか？</summary>
+        <p>はい。残債と市場価格を見極め、最適なタイミングをご提案します。</p>
+      </details>
+    </div>
+  </section>
 
-<section class="steps">
-<h2>はじめてでも、3ステップ</h2>
-<ol>
-<li>無料ヒアリング</li>
-<li>物件提案＆収支シミュレーション</li>
-<li>契約・運用開始</li>
-</ol>
-</section>
+  <!-- リードフォーム -->
+  <section id="lead" class="lead">
+    <h2>無料で診断・資料請求</h2>
+    <form id="leadForm">
+      <input type="text" name="name" placeholder="お名前" required>
+      <input type="email" name="email" placeholder="メールアドレス" required>
+      <select name="budget" required>
+        <option value="" disabled selected>想定投資額</option>
+        <option>〜500万円</option>
+        <option>500〜1,500万円</option>
+        <option>1,500万円以上</option>
+      </select>
+      <button type="submit">送信</button>
+    </form>
+    <p class="note">※送信でプライバシーポリシーに同意したものとみなします。</p>
+    <div id="thanks" class="thanks" hidden>ありがとうございます！折り返しご連絡します。</div>
+  </section>
 
+  <!-- フッター -->
+  <footer class="footer">© AssetBase</footer>
 
-<section id="lead" class="lead">
-<h2>無料で診断・資料請求</h2>
-<form id="leadForm">
-<input type="text" name="name" placeholder="お名前" required>
-<input type="email" name="email" placeholder="メールアドレス" required>
-<select name="budget" required>
-<option value="" disabled selected>想定投資額</option>
-<option>〜500万円</option><option>500〜1,500万円</option><option>1,500万円以上</option>
-</select>
-<button type="submit">送信</button>
-</form>
-<p class="note">※送信でプライバシーポリシーに同意したものとみなします。</p>
-<div id="thanks" class="thanks" hidden>ありがとうございます！折り返しご連絡します。</div>
-</section>
-
-
-<footer class="footer">© AssetBase</footer>
-<script src="main.js"></script>
+  <!-- スクリプト -->
+  <script src="main.js"></script>
 </body>
 </html>

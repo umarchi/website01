@@ -1,21 +1,207 @@
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#0a0a0a}
-.nav{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#fff;border-bottom:1px solid #eee}
-.logo{font-weight:800}
-.cta{padding:10px 14px;border:1px solid #111;border-radius:12px;text-decoration:none;color:#111}
-.hero{padding:80px 20px;text-align:center;background:linear-gradient(180deg,#f7f7f7,#ffffff)}
-.hero h1{font-size:40px;line-height:1.2;margin:0 0 8px}
-.hero h1 span{background:#111;color:#fff;padding:0 8px;border-radius:8px}
-.hero .sub{color:#555;margin:0 0 16px}
-.btn{display:inline-block;background:#111;color:#fff;padding:14px 22px;border-radius:12px;text-decoration:none}
-.trust{margin-top:12px;color:#777;font-size:14px}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;padding:40px 20px;max-width:1000px;margin:0 auto}
-.card{border:1px solid #eee;border-radius:16px;padding:20px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-.steps{padding:20px;text-align:center}
-.steps ol{display:inline-block;text-align:left}
-.lead{padding:40px 20px;background:#fafafa;text-align:center}
-#leadForm{display:grid;gap:10px;max-width:420px;margin:0 auto}
-#leadForm input,#leadForm select{padding:12px 14px;border:1px solid #ddd;border-radius:10px}
-#leadForm button{padding:12px 16px;border:none;background:#111;color:#fff;border-radius:12px;cursor:pointer}
-.note{color:#777;font-size:12px}
-.thanks{margin-top:12px;color:#0a7d22;font-weight:600}
-.footer{padding:30px;text-align:center;color:#777}
+/* =========================
+   Base
+========================= */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #0a0a0a;
+  background: #fff;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* =========================
+   Nav
+========================= */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 20px; background: #fff; border-bottom: 1px solid #eee;
+}
+.logo { font-weight: 800; }
+.cta {
+  padding: 10px 14px; border: 1px solid #111; border-radius: 12px;
+  text-decoration: none; color: #111;
+}
+
+/* =========================
+   Hero
+========================= */
+.hero {
+  padding: 100px 20px 80px;
+  text-align: center;
+  background: linear-gradient(180deg, #f7f7f7, #ffffff);
+}
+.hero h1 { font-size: 40px; line-height: 1.2; margin: 0 0 8px; }
+.hero h1 span { background: #111; color: #fff; padding: 0 8px; border-radius: 8px; }
+.hero .sub { color: #555; margin: 0 0 16px; }
+.btn {
+  display: inline-block; background: #111; color: #fff;
+  padding: 14px 22px; border-radius: 12px; text-decoration: none;
+}
+.trust { margin-top: 12px; color: #777; font-size: 14px; }
+
+/* =========================
+   Pain
+========================= */
+.pain { padding: 50px 0; background: #fff; }
+.pain h2 { margin: 0 0 12px; text-align: center; }
+.pain ul { max-width: 800px; margin: 0 auto; display: grid; gap: 10px; }
+
+/* =========================
+   Feature Rows（PC/Tablet＝左右、スマホ＝画像→テキスト）
+========================= */
+.feature-rows { padding: 30px 0 10px; display: grid; gap: 40px; }
+.feature-row {
+  display: grid; gap: 20px; grid-template-columns: 1.1fr 1fr;
+  align-items: center; padding: 10px 20px;
+}
+.feature-row.alt { grid-template-columns: 1fr 1.1fr; }
+.feature-row .media img {
+  width: 100%; height: auto; border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.1);
+}
+.feature-row .content { padding: 10px; }
+.feature-row h3 { font-size: 28px; margin: 0 0 10px; }
+.bullets { display: grid; gap: 8px; margin: 12px 0 0; padding-left: 18px; }
+.steps   { display: grid; gap: 6px; margin: 12px 0 0; padding-left: 18px; }
+
+/* =========================
+   Stats（スマホ1列／タブレット以上3列）
+========================= */
+.stats { padding: 40px 0; background: #fafafa; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.stats .container {
+  display: grid; gap: 16px; text-align: center;
+  grid-template-columns: repeat(3, 1fr); /* デフォルト：3列 */
+}
+.stat { background: #fff; border: 1px solid #eee; border-radius: 16px; padding: 20px; }
+.stat strong { font-size: 28px; display: block; }
+
+/* =========================
+   Testimonials（無限自動スクロール：transform版）
+========================= */
+.testimonials { padding: 50px 0; background: #fff; }
+.testimonials h2 { text-align: center; margin-bottom: 16px; }
+
+/* ビューポートの枠（左右フェード＋はみ出し隠し） */
+.t-carousel{
+  position: relative; overflow: hidden; padding: 8px 0 14px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+}
+/* 流れるトラック（JSがtransformを更新） */
+.t-track{ display: inline-flex; gap: 14px; will-change: transform; }
+/* カード */
+.t-card{
+  flex: 0 0 280px; height: 260px; background: #fafafa;
+  border: 1px solid #eee; border-radius: 16px; padding: 16px 14px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  box-shadow: 0 6px 24px rgba(0,0,0,.06);
+}
+.t-quote{ margin: 0; line-height: 1.6; color: #222; }
+.t-author{ display: block; margin-top: 12px; color: #666; font-style: normal; font-weight: 600; }
+.t-hint{ text-align: center; color: #999; font-size: 12px; margin-top: 8px; }
+
+/* =========================
+   FAQ
+========================= */
+.faq { padding: 50px 0; background: #fff; }
+.faq h2 { text-align: center; margin-bottom: 16px; }
+.faq details {
+  max-width: 800px; margin: 10px auto; border: 1px solid #eee;
+  border-radius: 10px; padding: 12px 14px; background: #fff;
+}
+.faq summary { cursor: pointer; font-weight: 600; }
+
+/* =========================
+   Lead
+========================= */
+.lead { padding: 50px 20px; background: #fafafa; text-align: center; }
+#leadForm { display: grid; gap: 10px; max-width: 420px; margin: 0 auto; }
+#leadForm input, #leadForm select { padding: 12px 14px; border: 1px solid #ddd; border-radius: 10px; }
+#leadForm button { padding: 12px 16px; border: none; background: #111; color: #fff; border-radius: 12px; cursor: pointer; }
+.note { color: #777; font-size: 12px; }
+.thanks { margin-top: 12px; color: #0a7d22; font-weight: 600; }
+
+/* =========================
+   Footer
+========================= */
+.footer { padding: 30px; text-align: center; color: #777; }
+
+/* =========================
+   Scroll-in Animations（左右イン）
+========================= */
+.from-left, .from-right {
+  opacity: 0; transform: translateX(0);
+  transition: transform .8s cubic-bezier(.2,.8,.2,1), opacity .8s;
+}
+.from-left  { transform: translateX(-48px); }
+.from-right { transform: translateX(48px);  }
+.in.from-left, .in.from-right { opacity: 1; transform: translateX(0); }
+
+/* =========================
+   Responsive（モバイル優先の調整）
+========================= */
+
+/* 流体タイポとボタン */
+.hero h1 { font-size: clamp(28px, 4vw, 44px); }
+.hero .sub { font-size: clamp(14px, 1.7vw, 18px); }
+.btn { font-size: clamp(14px, 1.6vw, 16px); }
+
+/* 超小画面の左右余白 */
+@media (max-width: 420px){
+  .container { padding: 0 14px; }
+}
+
+/* スマホ（～640px）：Feature Rows を「画像→テキスト」の縦並びに */
+@media (max-width: 640px){
+  .feature-row, .feature-row.alt {
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  .feature-row .media, .feature-row.alt .media   { order: 0; width: 100%; }
+  .feature-row .content, .feature-row.alt .content { order: 1; width: 100%; }
+
+  .feature-row .media img { border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+  .feature-row h3 { font-size: 22px; text-align: center; }
+  .feature-row p, .feature-row ul, .feature-row ol { text-align: left; }
+
+  /* Stats：スマホは1列 */
+  .stats .container { grid-template-columns: 1fr; }
+  .stat strong { font-size: 24px; }
+
+  /* Testimonials：端フェード弱め、カード小さめ */
+  .t-carousel{
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+  }
+}
+
+/* タブレット（641px～）：Feature Rows は左右のまま／Statsは3列のまま */
+@media (min-width: 641px){
+  .stats .container { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* カードの段階的サイズ調整（Testimonials） */
+@media (max-width: 1024px){ .t-card { flex-basis: 260px; height: 250px; } }
+@media (max-width: 768px) { .t-card { flex-basis: 240px; height: 240px; } }
+@media (max-width: 480px) {
+  .t-card { flex-basis: 220px; height: 220px; padding: 14px 12px; }
+  .t-quote { line-height: 1.55; }
+  .t-author { font-size: 13px; }
+  .btn { padding: 12px 18px; border-radius: 10px; }
+  .cta { padding: 8px 12px; border-radius: 10px; }
+}
+
+/* 視覚効果を減らす設定の尊重 */
+@media (prefers-reduced-motion: reduce) {
+  .t-track { transition: none !important; }
+}
+
+/* 改行制御 */
+.sp-only { display: none; } /* デフォルトで非表示（PC向け） */
+.pc-only { display: inline; }
+
+@media (max-width: 640px) {
+  .sp-only { display: inline; } /* スマホでのみ表示 */
+  .pc-only { display: none; }
+}
