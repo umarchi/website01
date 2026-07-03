@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AssetBase</title>
+  <title>AssetBase | 都心中古マンション投資の無料診断</title>
+  <meta name="description" content="AssetBaseは、都心中古マンション投資の物件選定、収益シミュレーション、賃貸管理まで一気通貫で支援するサンプルサイトです。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111'/%3E%3Cpath d='M18 46 31 14h6l13 32h-7l-3-8H28l-3 8h-7Zm12-14h8l-4-11-4 11Z' fill='%23bbf7d0'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
@@ -13,15 +15,25 @@
   <!-- ナビ -->
   <header class="nav">
     <div class="logo">AssetBase</div>
-    <a class="cta" href="#lead">無料で資料請求</a>
+    <a class="cta" href="#lead">無料診断を予約</a>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <h1>プロが厳選する<span>都心中古</span>で、<br class="pc-only">ムリのない資産形成を</h1>
-    <p class="sub">データ×プロの目でリスクを最小化。管理まで一気通貫。</p>
-    <a class="btn" href="#lead">3分で完了：無料診断</a>
-    <div class="trust">掲載実績：経済誌 / OO新聞 / OO経済</div>
+    <div class="hero-inner">
+      <p class="eyebrow">都心中古マンション投資の無料診断</p>
+      <h1>プロが厳選する<span>都心中古</span>で、<br class="pc-only">ムリのない資産形成を</h1>
+      <p class="sub">立地分析・融資相談・賃貸管理まで、初回面談から運用開始後まで一気通貫で伴走します。</p>
+      <div class="hero-actions">
+        <a class="btn" href="#lead">3分で無料診断</a>
+        <a class="btn secondary" href="#features">選ばれる理由を見る</a>
+      </div>
+      <div class="trust" aria-label="サービス実績">
+        <span>提案実績 2,300件以上</span>
+        <span>継続運用率 98%</span>
+        <span>満足度 4.9/5</span>
+      </div>
+    </div>
   </section>
 
   <!-- Pain Points -->
@@ -37,13 +49,13 @@
   </section>
 
   <!-- Feature Rows（左右から入るアニメーション） -->
-  <section class="feature-rows" aria-label="主な特長">
+  <section id="features" class="feature-rows" aria-label="主な特長">
     <!-- 立地最優先 -->
     <article class="feature-row">
       <div class="media from-left" data-animate="left" aria-hidden="true">
     <img
-    src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1200&q=80"
-    alt="ロンドンの風景"
+    src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80"
+    alt="都心の高層住宅と街並み"
     loading="lazy"
   />
 </div>
@@ -59,7 +71,7 @@
       </div>
     </article>
 
-    <!-- 収益シミュレーションレーション -->
+    <!-- 収益シミュレーション -->
     <article class="feature-row alt">
       <div class="content from-left" data-animate="left">
         <h3>収益シミュレーション</h3>
@@ -268,7 +280,7 @@
       </details>
       <details>
         <summary>空室や修繕のリスクは？</summary>
-        <p>エリア選定とシミュレーションレーションで事前に織り込み、運用で定点観測します。</p>
+        <p>エリア選定と収益シミュレーションで事前に織り込み、運用で定点観測します。</p>
       </details>
       <details>
         <summary>途中売却はできますか？</summary>
@@ -281,9 +293,12 @@
   <section id="lead" class="lead">
     <h2>無料で診断・資料請求</h2>
     <form id="leadForm">
-      <input type="text" name="name" placeholder="お名前" required>
-      <input type="email" name="email" placeholder="メールアドレス" required>
-      <select name="budget" required>
+      <label class="sr-only" for="name">お名前</label>
+      <input id="name" type="text" name="name" placeholder="お名前" autocomplete="name" required>
+      <label class="sr-only" for="email">メールアドレス</label>
+      <input id="email" type="email" name="email" placeholder="メールアドレス" autocomplete="email" required>
+      <label class="sr-only" for="budget">想定投資額</label>
+      <select id="budget" name="budget" required>
         <option value="" disabled selected>想定投資額</option>
         <option>〜500万円</option>
         <option>500〜1,500万円</option>
@@ -291,12 +306,12 @@
       </select>
       <button type="submit">送信</button>
     </form>
-    <p class="note">※送信でプライバシーポリシーに同意したものとみなします。</p>
+    <p class="note">※本サイトはサンプルです。投資判断は収益・借入・空室・価格変動などのリスクを確認したうえで行ってください。</p>
     <div id="thanks" class="thanks" hidden>ありがとうございます！折り返しご連絡します。</div>
   </section>
 
   <!-- フッター -->
-  <footer class="footer">© AssetBase</footer>
+  <footer class="footer">NAMIKI Asset Studio All Right Reserved</footer>
 
   <!-- スクリプト -->
   <script src="main.js"></script>
