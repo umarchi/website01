@@ -291,8 +291,8 @@
 
   <!-- リードフォーム -->
   <section id="lead" class="lead">
-    <h2>無料で診断・資料請求</h2>
-    <form id="leadForm">
+    <h2>仕事のご相談・資料請求</h2>
+    <form id="leadForm" action="mailto:jobs@archi-softs.com" method="post" enctype="text/plain">
       <label class="sr-only" for="name">お名前</label>
       <input id="name" type="text" name="name" placeholder="お名前" autocomplete="name" required>
       <label class="sr-only" for="email">メールアドレス</label>
@@ -304,10 +304,12 @@
         <option>500〜1,500万円</option>
         <option>1,500万円以上</option>
       </select>
+      <label class="sr-only" for="message">ご相談内容</label>
+      <textarea id="message" name="message" placeholder="ご相談内容・ご希望の連絡方法など" rows="5" required></textarea>
       <button type="submit">送信</button>
     </form>
-    <p class="note">※本サイトはサンプルです。投資判断は収益・借入・空室・価格変動などのリスクを確認したうえで行ってください。</p>
-    <div id="thanks" class="thanks" hidden>ありがとうございます！折り返しご連絡します。</div>
+    <p class="note">※送信ボタンを押すと、jobs@archi-softs.com 宛のメール作成画面が開きます。</p>
+    <div id="thanks" class="thanks" hidden>メール作成画面を開きました。内容をご確認のうえ送信してください。</div>
   </section>
 
   <!-- フッター -->

@@ -1,10 +1,28 @@
-// フォーム送信（デモ）
+// フォーム送信
 const form = document.getElementById('leadForm');
 if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    form.hidden = true;
-    document.getElementById('thanks').hidden = false;
+    const formData = new FormData(form);
+    const name = formData.get('name') || '';
+    const email = formData.get('email') || '';
+    const budget = formData.get('budget') || '';
+    const message = formData.get('message') || '';
+    const subject = `仕事のご相談: ${name}`;
+    const body = [
+      'NAMIKI Asset Studio サイトから問い合わせがありました。',
+      '',
+      `お名前: ${name}`,
+      `メールアドレス: ${email}`,
+      `想定投資額: ${budget}`,
+      '',
+      'ご相談内容:',
+      message
+    ].join('\n');
+
+    window.location.href = `mailto:jobs@archi-softs.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const thanks = document.getElementById('thanks');
+    if (thanks) thanks.hidden = false;
   });
 }
 

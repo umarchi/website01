@@ -158,7 +158,13 @@ body {
 ========================= */
 .lead { padding: 50px 20px; background: #fafafa; text-align: center; }
 #leadForm { display: grid; gap: 10px; max-width: 420px; margin: 0 auto; }
-#leadForm input, #leadForm select { padding: 12px 14px; border: 1px solid #ddd; border-radius: 10px; }
+#leadForm input, #leadForm select, #leadForm textarea {
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font: inherit;
+}
+#leadForm textarea { resize: vertical; min-height: 120px; }
 #leadForm button { padding: 12px 16px; border: none; background: #111; color: #fff; border-radius: 8px; cursor: pointer; font-weight: 800; }
 .note { color: #777; font-size: 12px; }
 .thanks { margin-top: 12px; color: #0a7d22; font-weight: 600; }
